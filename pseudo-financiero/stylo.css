@@ -1,0 +1,80 @@
+html{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #0a0a23 ;
+}
+
+/*El selector span[class~="sr-only"] seleccionará cualquier elemento span cuyo class incluya sr-only.*/
+span[class~="sr-only"]{
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px )!important ;  /* clip se utiliza para definir la visibilidad de las partes de un elemento.*/
+    clip-path: inset(50%)!important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important;
+    padding: 0 !important;
+    margin: -1px !important;  /* !important: para q no sobrescribas tus propiedades*/ 
+}
+
+h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+}
+
+h1 .flex{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+
+/*para apuntar al primer span en tu contenedor flex,*/
+h1 .flex span:first-of-type{
+    font-size: 0.7em;
+}
+
+/*para apuntar al último span en tu contenedor flex,*/
+h1 .flex span:last-of-type{
+    font-size: 1.2em;
+}
+
+section{
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+}
+
+#years{
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    background-color: #0a0a23;
+    color: #fff;
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+    z-index: 999;
+}
+
+/*La sintaxis span[class] apuntará a cualquier elemento span que tenga un atributo class(separa, huecos en los años)*/
+#years span[class]{
+    font-weight: bold ;
+    width: 4.5rem;
+    text-align: right;
+ 
+}
+
+.table-wrap{
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+/*devuelve el estado a la fuente*/
+span:not(.sr-only){
+    font-weight: normal;
+
+}
