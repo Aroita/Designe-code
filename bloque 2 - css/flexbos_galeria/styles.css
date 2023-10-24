@@ -1,0 +1,59 @@
+*{
+    box-sizing:border-box
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f6f7  ;
+}
+
+.gallery img{
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.header{
+    /*transforma a mayuscula*/
+    text-transform: uppercase;
+     /*centra el textoa*/
+    text-align: center;
+    padding: 32px;
+    background: #0a0a23 ;
+    color: #fff;
+    border-bottom: 4px solid #fdb347 ;
+
+}
+
+/*Flexbox es un diseño CSS unidimensional que puede controlar la forma en que los elementos se espacian y alinean dentro de un contenedor.*/
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+    /*la propiedad object-fit para determinar cómo deben comportarse las imágenes.Esto le dirá a la imagen que llene el contenedor img manteniendo la relación de aspecto,*/
+    object-fit: cover;
+    /*La propiedad CSS gap establece los espacios*/
+    gap: 16px;
+
+}
+/*
+row (default): horizontal axis with flex items from left to right
+row-reverse: horizontal axis with flex items from right to left
+column: vertical axis with flex items from top to bottom
+column-reverse: vertical axis with flex items from bottom to top
+*/
+
+.gallery::after{
+    content: "";
+    width: 350px;
+}

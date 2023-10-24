@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylo.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <!--Si quieres que este elemento en particular este oculto para los lectores de pantalla, así que dale el atributo aria-hidden establecido en true.-->
+        <div id="years" aria-hidden="true">
+            <span class="year">2019</span>
+            <span class="year">2020</span>
+            <span class="year">2021</span>
+
+        </div>
+        <div class="table-wrap">
+            <!-- Los elementos thead y tbody son usados para indicar que parte de tu tabla es la cabecera, y que parte contiene los datos principales o el contenido.-->
+            <table>
+                <caption class="caption-side">Assets</caption>
+                <!--El elemento tr se utiliza para indicar una fila de la tabla-->
+                <thead>
+                    <tr>
+                        <!-- El elemento <td> indica una celda de datos, .-->
+                        <td>
+                            <!-- mientras que el elemento <th> indica una celda de cabecera-->
+                            <th><span class="sr-only year">2019</span> </th>
+                            <th><span class="sr-only year">2020</span></th>
+                            <th class="current"><span class="sr-only year">2021</span></th>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="data">
+                        <th>Cash <span class="description">This is the cash we currently have on hand.</span>
+                            <td>$25</td>
+                            <td>$30</td>
+                            <td class="current">$28</td>
+                        </th>
+                    </tr>
+                    <tr class="data">
+                        <th>Checking <span class="description"> Our primary transactional account.</span>
+                            <td>$54</td>
+                            <td>$56</td>
+                            <td class="current">$53</td>
+                        </th>
+                    </tr>
+                    <tr class="data">
+                      <th>Savings <span class="description">Funds set aside for emergencies.</span>
+                        <td></td>
+                        <td></td>
+                        <td class="current"></td>
+                      </th>
+                    </tr>
+                    <tr class="total">
+                      
+                    </tr>
+                </tbody>
+            </table>
+            <table></table>
+            <table></table>
+
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

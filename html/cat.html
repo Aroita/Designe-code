@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatPhotoApp</title>
+</head>
+
+<body>
+    <main>
+        <!--modulo 1: 15/05/2023-->
+        <h1>CatPhotoApp</h1>
+        <section>
+            <h2>Cat Photos</h2>
+            <!-- comment-->
+            <p>See more <a href="https://www.freecodecamp.org/" target="_blank">cat photos</a> in our gallery</p>
+            <a href="https://freecatphotoapp.com"><img
+                    src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" width="380px"
+                    height="300px" alt="A cat orange"></a>
+
+        </section>
+
+        <section>
+
+
+            <h2>Cat Lists</h2>
+            <h3>Things cats love:</h3>
+            <!--lista desoedenada -->
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+                    alt="A slice of lasagna on a plate" width="400px" alt="300px">
+                <figcaption>Cats <em>love</em> lasagna.</figcaption>
+
+            </figure>
+
+        </section>
+        <section>
+            <h3>Top 3 things cats hate:</h3>
+            <!--Lista ordenada-->
+            <ol>
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+            </ol>
+
+            <figure><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+                    alt="Five cats looking around a field.">
+                <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+
+            </figure>
+        </section>
+        <section>
+            <!--Form-->
+            <h2>Cat Form</h2>
+            <form action="https://freecatphotoapp.com/submit-cat-photo">
+                <input type="text" name="email" placeholder="Email address">
+
+                <input required type="text" name="catphotourl" placeholder="cat photo URL">
+                <!-- Para que al seleccionar un botón de opción se deseleccione automáticamente el otro, ambos botones deben tener un atributo name con el mismo valor.-->
+                <!--  
+                <label> <input type="radio" name="Cat" > Cat</label>
+            -->
+                <fieldset>
+                    <legend>Is your cat an indoor or outdoor cat?</legend>
+                    <label><input id="indoor" name="indoor-outdoor" type="radio" value="indoor" checked> Indoor </label>
+                    <label><input id="outdoor" name="indoor-outdoor" type="radio" value="outdoor"> Outdoor</label>
+                    <button type="submit" value="indoor outdoor">Submit</button>
+                </fieldset>
+                <fieldset> <!--añadir nuevos elementos de entrada de formulario-->
+                    <!--Para que una casilla de verificación esté marcada o un botón de radio esté seleccionado por defecto, es necesario añadirle el atributo: checked-->
+                    <legend>What's your cat's personality?</legend>
+                    <input id="loving" name="personality" type="checkbox" checked>
+                    <label for="loving" value="loving">Loving</label>
+                    <input id="lazy" name="personality" type="checkbox">
+                    <label for="lazy" value="lazy">Lazy</label>
+                    <input id="energetic" name="personality" type="checkbox">
+                    <label for="energetic" value="energetic" check >energetic</label>
+                    
+
+                </fieldset>
+
+            </form>
+        </section>
+
+
+        <!--seguir: https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app -->
+
+    </main>
+    <footer><br>
+        <hr>
+        <p>No Copyright - <a href="http://freeCodeCamp.org">freeCodeCamp.org</a> </p>
+    </footer>
+</body>
+
+</html>
