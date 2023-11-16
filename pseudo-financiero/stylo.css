@@ -1,80 +1,172 @@
-html{
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    color: #0a0a23 ;
+  font-family: sans-serif;
+  color: #0a0a23;
 }
 
 /*El selector span[class~="sr-only"] seleccionará cualquier elemento span cuyo class incluya sr-only.*/
-span[class~="sr-only"]{
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px )!important ;  /* clip se utiliza para definir la visibilidad de las partes de un elemento.*/
-    clip-path: inset(50%)!important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    position: absolute !important;
-    padding: 0 !important;
-    margin: -1px !important;  /* !important: para q no sobrescribas tus propiedades*/ 
+span[class~="sr-only"] {
+  border: 0 !important;
+  clip: rect(
+    1px,
+    1px,
+    1px,
+    1px
+  ) !important ; /* clip se utiliza para definir la visibilidad de las partes de un elemento.*/
+  clip-path: inset(50%) !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  position: absolute !important;
+  padding: 0 !important;
+  margin: -1px !important; /* !important: para q no sobrescribas tus propiedades*/
 }
 
 h1 {
-    max-width: 37.25rem;
-    margin: 0 auto;
-    padding: 1.5rem 1.25rem;
+  max-width: 37.25rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
 }
 
-h1 .flex{
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1rem;
+h1 .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
 }
 
 /*para apuntar al primer span en tu contenedor flex,*/
-h1 .flex span:first-of-type{
-    font-size: 0.7em;
+h1 .flex span:first-of-type {
+  font-size: 0.7em;
 }
 
 /*para apuntar al último span en tu contenedor flex,*/
-h1 .flex span:last-of-type{
-    font-size: 1.2em;
+h1 .flex span:last-of-type {
+  font-size: 1.2em;
 }
 
-section{
-    max-width: 40rem;
-    margin: 0 auto;
-    border: 2px solid #d0d0d5;
+section {
+  max-width: 40rem;
+  margin: 0 auto;
+  border: 2px solid #d0d0d5;
 }
 
-#years{
-    display: flex;
-    justify-content: flex-end;
-    position: sticky;
-    top: 0;
-    background-color: #0a0a23;
-    color: #fff;
-    margin: 0 -2px;
-    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
-    z-index: 999;
+#years {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  background-color: #0a0a23;
+  color: #fff;
+  margin: 0 -2px;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  z-index: 999;
 }
 
 /*La sintaxis span[class] apuntará a cualquier elemento span que tenga un atributo class(separa, huecos en los años)*/
-#years span[class]{
-    font-weight: bold ;
-    width: 4.5rem;
-    text-align: right;
- 
+#years span[class] {
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
 }
 
-.table-wrap{
-    padding: 0 0.75rem 1.5rem 0.75rem;
+.table-wrap {
+  padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
-/*devuelve el estado a la fuente*/
-span:not(.sr-only){
-    font-weight: normal;
+table {
+  /*  permitirá que los bordes de las celdas se contraigan en un solo borde, en lugar de un borde alrededor de cada celda. */
+  border-collapse: collapse;
+  border: 0;
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
+}
 
+/* subtitulos a la izq */
+table caption {
+  color: #356eaf;
+  font-size: 1.3em;
+  font-weight: normal;
+  position: absolute;
+  top: -2.25rem;
+  left: 0.5rem;
+}
+
+tbody td {
+  min-width: 4rem;
+  max-width: 4rem;
+  width: 100vw;
+}
+tbody th {
+  width: calc(100% - 12rem);
+}
+
+/* lineas dobles en cada tr con class: total */
+tr[class="total"] {
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+tr[class="total"] th {
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+/* La diferencia clave entre tr[class="total"] y tr.total es que el primero seleccionara los elementos tr donde la única clase sea total. 
+El segundo seleccionará los elementos tr donde la clase includes total.
+
+Puedes usar este selector para apuntar a todos los elementos td dentro de tus filas .total*/
+tr.total td {
+  text-align: right;
+  padding: 0 0.25rem;
+}
+
+/* El pseudo-selector :nth-of-type() se utiliza para apuntar a elementos específicos en función de su orden entre los hermanos del mismo tipo. 
+Utiliza este pseudo-selector para apuntar al tercer elemento td dentro de las filas total de tu tabla. Dale un relleno derecho de 0.5rem. */
+tr.total td:nth-of-type(3) {
+  padding-right: 0.5rem;
+}
+/* Dale a tus elementos tr.total un efecto hover que cambie el fondo a #99c9ff. */
+tr.total:hover {
+  background-color: #99c9ff;
+}
+
+td.current {
+  font-style: italic;
+}
+
+tr.data {
+  background-image: linear-gradient(
+    to bottom,
+    #dfdfe2 1.845rem,
+    white 1.845rem
+  );
+}
+
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+tr.data th .description {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+/* Alinea el texto verticalmente en la parte superior, horizontalmente alinea el texto a la derecha, y establece el relleno en 0.3rem 0.25rem 0. */
+tr.data td {
+  text-align: right;
+  vertical-align: top;
+  padding: 0.3rem 0.25rem 0;
+}
+
+/* Crea otro selector para los elementos td dentro de tu elemento tr.data, pero selecciona específicamente el último. Dale un relleno derecho de 0.5rem.*/
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
 }
