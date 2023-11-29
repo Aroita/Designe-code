@@ -8,7 +8,7 @@
  //Almacenamiento de valores con el operador de asignación(=)
 
 var miName;
-miName = "Aro";
+miName = "Anaconda";
 
 // Asignar el valor de una variable a otra
 var MiApellido;
