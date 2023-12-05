@@ -9,7 +9,24 @@
     height: 55vw;
     max-height: 500px;
     max-width: 500px;
+    animation-name: wheel; /*animation-name se usa para vincular la regla @keyframes llamada wheel (esta abajo)*/
+  animation-duration: 10s; /*establecer cuánto tiempo tarda la animación: en segundos (s) o en milisegundos (ms)*/
+  animation-iteration-count: infinite;
+  animation-timing-function:linear;
 }
+
+/*Animación @keyfranes y nombre*/
+@keyframes wheel { 
+    0% {
+        transform:rotate(0deg)      ;
+
+    }
+100%{
+    transform: rotate(360deg);
+    
+    }
+
+}    
 
 .line{
     background-color: black;
@@ -39,13 +56,62 @@
 
 .cabin{
     background-color: red;
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    border: 2px solid;
-    transform-origin:50% 0%;
-    top: 50%;
-    
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  border: 2px solid;
+  transform-origin: 50% 0%;
+  animation: cabins 10s ease-in-out infinite;
+     /*Esto establecerá las propiedades animation-name, animation-duration, animation-timing-function, y animation-iteration-count en ese orden.*/   
 }
 
-    
+@keyframes cabins {
+    0% {
+      transform: rotate(0deg);
+      
+    }
+    25%{
+        background-color: yellowgreen;
+    }
+    50%{
+          background-color: purple;
+      }
+    75%{
+    background-color: yellow;
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+.cabin:nth-of-type(1){
+    top: 50%;
+    right: -8.5%;
+}
+.cabin:nth-of-type(2){
+    right: 17%;
+    top: 93.5%;
+
+}
+.cabin:nth-of-type(3){
+    right: 67%;
+    top: 93.5%;
+
+}
+.cabin:nth-of-type(4){
+    left: -8.5%;
+    top: 50%;
+
+}
+.cabin:nth-of-type(5){
+    left: 17%;
+    top: 7%;
+
+}
+.cabin:nth-of-type(6){
+    right: 17%;
+    top: 7%;
+
+}
+
+
